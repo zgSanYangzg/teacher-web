@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+      
+    <!-- MultipartFilter需要的文件上传处理器,id必须是 filterMultipartResolver-->
+    <bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+ 
+ 	<bean id="springContextHelper" class="com.wfj.support.SpringContextHelper"></bean>
+ 
+    <bean id="ky.pollingConnectionManager" class="org.apache.http.impl.conn.PoolingHttpClientConnectionManager">
+        <!--整个连接池的并发-->
+        <property name="maxTotal" value="1000" />
+        <!--每个主机的并发-->
+        <property name="defaultMaxPerRoute" value="1000" />
+    </bean>
+ 
+    <bean id="ky.httpClientBuilder" class="org.apache.http.impl.client.HttpClientBuilder" factory-method="create">
+        <property name="connectionManager" ref="ky.pollingConnectionManager" />
+    </bean>
+ 
+    <bean id="ky.httpClient" factory-bean="ky.httpClientBuilder" factory-method="build" />
+    
+ 	<!-- 自定义的httpclient请求生成策略,解决了resttemplate的DELETE方法不能传递请求体的问题 -->
+    <bean id="ky.clientHttpRequestFactory" class="com.wfj.support.CustomHttpComponentsClientHttpRequestFactory">
+        <constructor-arg ref="ky.httpClient"/>
+        <!--连接超时时间，毫秒-->
+        <property name="connectTimeout" value="100000"/>
+        <!--读写超时时间，毫秒-->
+        <property name="readTimeout" value="100000"/>
+    </bean>
+ 
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <constructor-arg ref="ky.clientHttpRequestFactory"/>
+        <property name="errorHandler">
+            <bean class="org.springframework.web.client.DefaultResponseErrorHandler"/>
+        </property>
+    </bean>
+ 
+</beans>

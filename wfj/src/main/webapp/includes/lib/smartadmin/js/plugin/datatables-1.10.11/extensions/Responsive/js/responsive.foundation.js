@@ -1,0 +1,5 @@
+/*! Foundation integration for DataTables' Responsive
+ * ©2015 SpryMedia Ltd - datatables.net/license
+ */
+
+!function(e){"function"==typeof define&&define.amd?define(["jquery","datatables.net-zf","datatables.net-responsive"],function(n){return e(n,window,document)}):"object"==typeof exports?module.exports=function(n,a){return n||(n=window),a&&a.fn.dataTable||(a=require("datatables.net-zf")(n,a).$),a.fn.dataTable.Responsive||require("datatables.net-responsive")(n,a),e(a,n,n.document)}:e(jQuery,window,document)}(function(e,n,a,o){var t=e.fn.dataTable,d=t.Responsive.display,r=d.modal;return d.modal=function(n){return function(a,o,t){e.fn.foundation?o||e('<div class="reveal-modal" data-reveal/>').append('<a class="close-reveal-modal" aria-label="Close">&#215;</a>').append(n&&n.header?"<h4>"+n.header(a)+"</h4>":null).append(t()).appendTo("body").foundation("reveal","open"):r(a,o,t)}},t.Responsive});

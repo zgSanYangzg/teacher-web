@@ -1,0 +1,618 @@
+.opp_active{
+    right: 0!important;
+
+
+}
+.opp_unactive{
+    right: -400px!important;
+}
+
+.opp_result {
+    background-color: #f8f8f8;
+    bottom: 0;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: -400px;
+    top: 20px;
+    width: 400px;
+    overflow-y: auto;
+  /*  height: calc(100% - 100px);
+    height:-moz-calc(100% - 100px);
+    height:-webkit-calc(100% - 100px);*/
+    z-index: 99;
+    -webkit-transition:right 0.2s linear 0s;
+    -moz-transition:right 0.2s linear 0s;
+    -ms-transition:right 0.2s linear 0s;
+    -o-transition:right 0.2s linear 0s;
+    transition:right 0.2s linear 0s;
+
+}
+.opp_result .tool_bar .min_title {
+    float: left;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.opp_large{
+    width:720px;
+}
+.opp_large.opp_unactive{
+    right: -720px!important;
+}
+.opp_large .input-label{
+    width: 510px;
+}
+
+.member_choosed_box {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.member_choosed_box .choosed_content {
+    bottom: 45px;
+    left: 0;
+    overflow: auto;
+    padding-left: 7px;
+    position: absolute;
+    right: 0;
+    top: 45px;
+}
+.member_choosed_box .choosed_content_operlog {
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding-left: 7px;
+    position: absolute;
+    right: 0;
+    top: 45px;
+}
+.member_choosed_box .choosed_title {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 20px 10px 10px 12px;
+}
+.member_choosed_box .member_tool {
+    background-color: #f3f3f3;
+    border-top: 1px solid #d7d7d7;
+    bottom: 0;
+    left: 0;
+    padding: 7px 10px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+.member_choosed_box .member_tool .btn {
+    margin-left: 4px;
+}
+.member_choosed_box .choosed_header {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #f3f3f3 0px, #eee 100%) repeat scroll 0 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    position: relative;
+    text-align: center;
+}
+
+.member_choosed_box .choosed_header .choosed_back {
+    border-right: 1px solid #ccc;
+    float: left;
+    width: 50px;
+}
+.member_choosed_box .choosed_header .choosed_mainTitle {
+    left: 50%;
+    margin-left: -120px;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 240px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.icon_close {
+    height: 35px;
+    width: 35px;
+    font-size: 36px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+.member_choosed_box .choosed_header .icon_close {
+    float: right;
+    margin: 0;/*10px 10px 0 0;*/
+}
+.cc_content {
+    padding: 35px 0 0 20px;
+}
+.cc_content .item {
+    overflow: hidden;
+    padding: 5px 0;
+}
+.cc_content .itemLabel {
+    color: #777;
+    float: left;
+    text-align: right;
+    width: 100px;
+}
+.cc_content .info {
+    margin-left: 105px;
+    margin-right: 10px;
+}
+.member_popover {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    padding-bottom: 20px;
+    position: absolute;
+    width: 330px;
+    z-index: 999;
+}
+.member_popover .cc_content, .member_popover .cc_header {
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+
+a:hover,a:focus{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.contact_view .tree_box {
+    background-color: #f8f8f8;
+    bottom: 0;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    width: 260px;
+}
+.contact_view .tree_list {
+    background-color: #fff;
+    border-left: 1px solid #dedddf;
+    bottom: 0;
+    left: 260px;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+.contact_view .tree_list_search_person {
+    left: 0 !important;
+}
+.contact_view .contact_search_box {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 86px;
+}
+.contact_view .search_box .tree_box {
+    top: 0;
+}
+.contact_empty_icon {
+    background-image: url("https://res.wx.qq.com/mmocbiz/zh_CN/tmt/pc/dist/sprite/style-old-list_7671b792.png");
+    background-position: 0 0;
+    display: inline-block;
+    height: 61px;
+    width: 74px;
+}
+.search_box {
+    background-color: #fff;
+    border-left: 1px solid #dedddf;
+    left: 220px;
+    overflow: auto;
+    right: 0;
+    width: auto;
+}
+.title_bar {
+    border-bottom: 1px solid #e7e7e7;
+    line-height: 32px;
+}
+.title .title_link {
+    color: #777;
+    text-decoration: none;
+}
+.title .title_link:hover {
+    text-decoration: underline;
+}
+.title .title_link_sort:hover {
+    cursor: default;
+    text-decoration: none;
+}
+.title .icon_sort_down {
+    color: #999;
+    display: none;
+    margin-left: 2px;
+}
+.title .title_link_sort .icon_sort_down {
+    display: inline-block;
+}
+.title .name {
+    margin-left: 44px;
+}
+.title_bar .sup_filter {
+    color: #72808e;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    margin-right: 15px;
+}
+.member_list, .tree_list .title_bar {
+    min-width: 800px;
+}
+.member_list {
+    overflow-y: auto;
+}
+.member_list li {
+    border-bottom: 1px solid #e5e5e5;
+    cursor: pointer;
+    line-height: 28px;
+    padding: 5px 0;
+    position: relative;
+    vertical-align: middle;
+}
+.member_list li:hover {
+    background-color: #f3f3f3;
+}
+.member_list li.checked, .member_list li.selected, .member_list li:active {
+    background-color: #ececec;
+}
+.member_list li.pintop {
+    background-color: #f5f9fd;
+}
+.member_list li {
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+}
+.member_list li .checkbox, .title .checkbox {
+    margin: 1px 0 0 20px;
+    vertical-align: middle;
+}
+.checkbox_node, .title .checkbox_node {
+    display: inline-block;
+    height: 30px;
+    min-width: 40px;
+    width: 6%;
+}
+.member_list li .face {
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+    display: inline-block;
+    height: 30px;
+    margin: 0 6px 0 2px;
+    vertical-align: middle;
+    width: 30px;
+}
+.member_list li .folder {
+    border-radius: 2px;
+    display: inline-block;
+    height: 30px;
+    margin: 0 6px 0 2px;
+    vertical-align: middle;
+    width: 30px;
+}
+.tree_list .account, .tree_list .mail, .tree_list .name, .tree_list .phone, .tree_list .position, .tree_list .state {
+    display: inline-block;
+    overflow: hidden;
+    padding-right: 10px;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.tree_list .tips-mail, .tree_list .tips-name, .tree_list .tips-position, .tree_list .tips-state {
+    display: inline-block;
+    margin-right: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.tree_list .tips-mail, .tree_list .tips-name {
+    min-width: 100px;
+    width: 12%;
+}
+.tree_list .tips-position {
+    min-width: 100px;
+    width: 42%;
+}
+.tree_list .tips-state {
+    min-width: 100px;
+    width: 12%;
+}
+.tree_list .name {
+    min-width: 90px;
+    width: 16%;
+}
+.mod-center__wrap .tree_list .name {
+    padding-left: 20px;
+    width: 224px;
+}
+.mod-center__wrap .tree_list .phone {
+    width: 152px;
+}
+.mod-center__wrap .tree_list .mail {
+    width: 275px;
+}
+.mod-center__wrap .tree_list .position {
+    width: 140px;
+}
+.mod-center__wrap .tree_list .state {
+    width: 80px;
+}
+.tree_list .account, .tree_list .position {
+    min-width: 80px;
+    width: 12%;
+}
+.tree_list .phone {
+    min-width: 100px;
+    width: 12%;
+}
+.tree_list .mail {
+    min-width: 150px;
+    width: 15%;
+}
+.tree_list .state {
+    float: right;
+    min-width: 40px;
+    padding-right: 20px;
+    text-align: center;
+    width: 6%;
+}
+.member_list li .state {
+    color: #72808e;
+}
+.member_list li .state .icon {
+    vertical-align: middle;
+}
+.member_list li .node_check {
+    margin-top: 5px;
+    position: absolute;
+    right: 20px;
+}
+
+.member_avator_list .member_avator_item {
+    border-bottom: 0 none;
+    cursor: default;
+    float: left;
+    height: 102px;
+    padding: 10px 3px;
+    position: relative;
+    text-align: center;
+    width: 23%;
+}
+.member_avator_item .icon_delete {
+    left: 50%;
+    margin-left: 21px;
+    position: absolute;
+    top: 4px;
+}
+.member_avator_item .icon_delete:active {
+    filter: opacity(1);
+    opacity: 0.7;
+}
+.member_avator_item .icon_delete:hover {
+    background-position: -96px 0;
+}
+.member_avator_item img {
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+}
+.member_avator_item .c_name, .member_avator_item .e_name {
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.cc_header {
+    overflow: hidden;
+    padding: 40px 0 0 33px;
+}
+.cc_header img {
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+    float: left;
+    height: 80px;
+    width: 80px;
+}
+.cc_header .detail {
+    margin-left: 102px;
+    overflow: hidden;
+    position: relative;
+    width: 258px;
+}
+@media not all, not all {
+    .cc_header .detail {
+        width: 255px;
+    }
+}
+.c_name_new {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 28px;
+    width: 180px;
+}
+.c_name_new .c_name_detail {
+    display: inline-block;
+    max-width: 154px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+.mod-icon-man {
+    background-image: url("https://res.wx.qq.com/mmocbiz/zh_CN/tmt/pc/dist/sprite/style-old-list_7671b792.png");
+    background-position: -74px -17px;
+    display: inline-block;
+    height: 16px;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+    width: 16px;
+}
+.mod-icon-woman {
+    background-image: url("https://res.wx.qq.com/mmocbiz/zh_CN/tmt/pc/dist/sprite/style-old-list_7671b792.png");
+    background-position: -74px -33px;
+    display: inline-block;
+    height: 16px;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+    width: 16px;
+}
+.cc_header .detail .c_name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: -2px;
+    width: 160px;
+}
+.cc_header .detail .e_name {
+    font-size: 16px;
+    margin-bottom: 3px;
+    width: 160px;
+}
+.cc_header .detail .duty, .cc_header .detail .info {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-right: 10px;
+}
+.cc_header .detail .freeze {
+    background-color: #eee;
+    color: #666;
+    padding: 2px 4px;
+    position: absolute;
+    right: 20px;
+    top: 4px;
+}
+
+.member_popover .cc_header .detail {
+    width: 210px;
+}
+.contact_tag_details {
+    padding: 10px 30px 0;
+}
+.contact_tag_details_item {
+    padding-bottom: 10px;
+}
+.contact_tag_details_item-line {
+    margin: 8px 0;
+}
+.contact_tag_details_label {
+    color: #777;
+    float: left;
+    text-align: right;
+    width: 86px;
+}
+.contact_tag_details_info {
+    margin-left: 105px;
+}
+.contact_tag_details_info a {
+    color: #222;
+}
+.contact_tag_details_table {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 20px;
+}
+.contact_tag_used_title {
+    color: #777;
+    display: block;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+.contact_tag_used_subhead {
+    display: block;
+    padding-top: 20px;
+}
+.contact_tag_used_desc {
+    color: #777;
+    display: block;
+    padding-top: 3px;
+}
+.contact_member_change_log {
+    padding: 30px 14px 10px 10px;
+}
+.contact_log_items li {
+    overflow: hidden;
+    padding: 4px 0;
+}
+.contact_log_items .log_time {
+    color: #8a8a8a;
+    float: right;
+}
+.contact_log_items .log_text {
+    color: #323232;
+    overflow: hidden;
+    padding-right: 20px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.memberDialog_selectTree {
+    height: 125px;
+}
+.form_add_member {
+    padding: 40px 0 20px;
+}
+.form_add_member .input_text {
+    width: 260px;
+}
+.form_add_member .form_item {
+    margin-bottom: 10px;
+    padding-left: 50px;
+}
+.form_add_member .form_info_block {
+    color: #ccc;
+    font-size: 12px;
+}
+.contact-tag .jstree-node {
+    padding-left: 17px;
+}
+.contact-tag .jstree-ocl {
+    display: none !important;
+}
+.contact-tag-add {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    width: 220px;
+}
+@media not all, only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+    .mod-contact-field-list__delete-icon {
+        background-image: url("https://res.wx.qq.com/mmocbiz/zh_CN/tmt/pc/dist/sprite/style-old-list@2x_634a195a.png");
+        background-position: -74px 0;
+        background-size: 90px auto;
+    }
+    .contact_empty_icon {
+        background-image: url("https://res.wx.qq.com/mmocbiz/zh_CN/tmt/pc/dist/sprite/style-old-list@2x_634a195a.png");
+        background-position: 0 0;
+        background-size: 90px auto;
+    }
+}
+*/

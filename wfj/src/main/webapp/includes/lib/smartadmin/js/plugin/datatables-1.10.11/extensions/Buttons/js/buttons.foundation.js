@@ -1,0 +1,5 @@
+/*! Foundation integration for DataTables' Buttons
+ * ©2015 SpryMedia Ltd - datatables.net/license
+ */
+
+!function(t){"function"==typeof define&&define.amd?define(["jquery","datatables.net-zf","datatables.net-buttons"],function(n){return t(n,window,document)}):"object"==typeof exports?module.exports=function(n,o){return n||(n=window),o&&o.fn.dataTable||(o=require("datatables.net-zf")(n,o).$),o.fn.dataTable.Buttons||require("datatables.net-buttons")(n,o),t(o,n,n.document)}:t(jQuery,window,document)}(function(t,n,o,e){var a=t.fn.dataTable,u=6===a.ext.foundationVersion?{tag:"div",className:"dt-button-collection dropdown-pane is-open button-group stacked"}:{tag:"ul",className:"dt-button-collection f-dropdown open dropdown-pane is-open",button:{tag:"li",className:"small"},buttonLiner:{tag:"a"}};return t.extend(!0,a.Buttons.defaults,{dom:{container:{tag:"div",className:"dt-buttons button-group"},buttonContainer:{tag:null,className:""},button:{tag:"a",className:"button small"},buttonLiner:{tag:null},collection:u}}),a.ext.buttons.collection.className="buttons-collection dropdown",a.Buttons});

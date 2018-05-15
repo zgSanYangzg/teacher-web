@@ -1,0 +1,239 @@
+<?
+layout("layout.html"){?>
+<link href="${basePath}includes/lib-source/iffx/css/ljdbsp/style.css" rel="stylesheet" />
+
+<div id="main" class="wa">
+    <div id="main_content" class="wp">
+        <!--焦点图---------------------->
+        <div class="home_bannar">
+            <div class="bd">
+                <div class="prev"><a href="javascript:void(0)">&lt;</a></div>
+                <div class="next"><a href="javascript:void(0)">&gt;</a></div>
+                <ul>
+                    <?
+                        //遍历首页banner
+                        var banners = banner.values;
+                        for(var img in banners!){?>
+                            <li style="background:url(${img.banner}) top center">
+                                <a target="_blank" href="${img.linkurl}"></a>
+                            </li>
+                        <?}
+                    ?>
+                </ul>
+            </div>
+            <div class="hd">
+                <ul>
+                    <?for(var img in banners!){?>
+                            <li class="${imgLP.first ? 'on':''}"></li>
+                    <?}?>
+                </ul>
+            </div>
+        </div>
+        <!--介绍---------------------->
+        <div id="ijs">
+            <ul class="ijs">
+                <? //遍历首页介绍
+                    var presentations = presentation.values;
+                    for(var js in presentations!){?>
+                    <li>
+                        <span><img src="${js.icon}" /></span>
+                        <h5>${js.title}</h5>
+                        <p>${js.subtitle}</p>
+                        <p>${js.subtitle1}</p>
+                    </li>
+                <?}?>
+            </ul>
+        </div>
+        <!--内容---------------------->
+        <div id="con">
+            <div class="con">
+                <div class="con1">
+                    <div class="con11">
+                        <h4 class="c1h4"><em>独家策略</em><a href="${basePath}DhService/AnalystList" target="_blank">[更多]</a></h4>
+                        <span><a href="javascript:void(0)"><img src="../includes/lib-source/iffx/images/c11.jpg" /></a></span>
+                        <ul>
+                            <?
+                                for(var analyst in analystList.list){
+                                    var title = analyst.title;
+                                    var len = strutil.length(title);
+                                    if(len>15){title=strutil.subStringTo(title,0,15)+'...';}
+                                ?>
+                                    <li>
+                                        <a href="${basePath}display/Article?id=${analyst._id}&type=analystList" target="_blank">
+                                             ${title}[${analyst.publishdate}]
+                                        </a>
+                                    </li>
+                                <?}
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="con12">
+                        <h4 class="c1h4"><em>独家观点</em><a href="${basePath}JiePan/Exclusive" target="_blank">[更多]</a></h4>
+                       <!-- <a href="/JiePan/Exclusive_256" target="blank" class="c12a">
+                            <h5>主力阴谋逐渐暴露</h5>
+                            <span><img src="../includes/lib-source/iffx/images/c12.jpg" /></span>
+                            <p>上证指数盘中曾经跌破3200点与5日均线，下午盘稍微一发力便收复了3200点与5日均线，成交量比上一个交易日有所萎缩，惜售...</p>
+                        </a>-->
+                        <ul>
+                           <!-- <li><a href="/JiePan/Exclusive_255" target="blank">投资心态要诀</a></li>
+                            <li><a href="/JiePan/Exclusive_254" target="blank">震仓目的是让你心慌</a></li>-->
+                            <?
+                                for(var exclu in exclusive.list){
+                                    var title = exclu.title;
+                                    var len = strutil.length(title);
+                                    if(len>15){title=strutil.subStringTo(title,0,15)+'...';}
+                                ?>
+                                <li>
+                                    <a href="${basePath}display/Article?id=${exclu._id}&type=exclusive"  target="_blank">${title}</a>
+                                </li>
+                            <?}
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="con13">
+                        <h4 class="c1h4"><em>私募动态</em><a href="${basePath}JiePan/PrivateNews" target="_blank">[更多]</a></h4>
+                        <ul>
+                            <?
+                                for(var news in privateNews.list){
+                                    var title = news.title;
+                                    var len = strutil.length(title);
+                                    if(len>22){title=strutil.subStringTo(title,0,22)+'...';}
+
+                                ?>
+                                <li>
+                                    <a href="${basePath}display/Article?id=${news._id}&type=privateNews"  target="_blank">${title}</a>
+                                </li>
+                                <?}
+                            ?>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="con2">
+                    <h3>分析师介绍<em>INTRODUCTION OF ANALYSTS</em></h3>
+                    <ul>
+                        <? //遍历首页分析师介绍
+                        var analysts = analysts.values;
+                        for(var analyst in analysts!){?>
+                            <li>
+                                <div class="con2p">
+                                    <h5>${analyst.title}</h5>
+                                    <p>${analyst.description}</p>
+                                    <a href="${basePath}DhService/Team">查看主页</a>
+                                </div>
+                                <div class="con2i"><img src="${analyst.icon}"/></div>
+                            </li>
+                        <?}?>
+                    </ul>
+                </div>
+                <div class="con3">
+                    <ul class="con3l">
+                        <li>
+                            <img class="dt" src="../includes/lib-source/iffx/images/c31.jpg" />
+                            <div class="bbg"></div>
+                            <span><img src="../includes/lib-source/iffx/images/c3_h1.png"/></span>
+                            <a href="${basePath}DhService/Report3/1" target="_blank">阅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读</a>
+                        </li>
+                        <li>
+                            <img class="dt" src="../includes/lib-source/iffx/images/c32.jpg" />
+                            <div class="bbg"></div>
+                            <span><img src="../includes/lib-source/iffx/images/c3_h2.png"/></span>
+                            <a href="${basePath}DhService/Report2/1" target="_blank">阅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读</a>
+                        </li>
+                        <li>
+                            <img class="dt" src="../includes/lib-source/iffx/images/c33.jpg" />
+                            <div class="bbg"></div>
+                            <span><img src="../includes/lib-source/iffx/images/c3_h3.png"/></span>
+                            <a href="${basePath}DhService/Report1/1" target="_blank">阅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;读</a>
+                        </li>
+                    </ul>
+                    <div class="con3r">
+                        <img src="${advertisement.values.icon}" style="width: 338px;height: 325px;" />
+                    </div>
+                </div>
+                <div class="con4">
+                    <a href="javascript:void(0)"><img src="${advantage.values.icon}" /></a>
+                </div>
+                <div class="con5">
+                    <div class="con5l">
+                        <h4>关于爱福投资</h4>
+                        <p>${advantage.values.description}</p>
+                        <ul>
+                            <li>
+                                <img class="i1" src="../includes/lib-source/iffx/images/c4li3.jpg" />
+                                <img class="i2" src="../includes/lib-source/iffx/images/c4li4.jpg" />
+                            </li>
+                            <li>
+                                <img class="i1" src="../includes/lib-source/iffx/images/c4li1.jpg" />
+                                <img class="i2" src="../includes/lib-source/iffx/images/c4li2.jpg" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="con5r">
+                        <h4>爱福优势</h4>
+                        <ul>
+                            <?
+                                var advs = strutil.split(advantage.values.contents!,',');
+                                for(var adv in advs!){
+                                    var specs = strutil.split(adv,'--');
+                                ?>
+                                    <li>
+                                        <span>${specs[0]}</span>
+                                        <p><?if(specs.~size > 1){?>${specs[1]}<?}?></p>
+                                    </li>
+                                <?}
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="con6">
+                    <h4>合作媒体<em>Media Partners</em></h4>
+                    <div class="con6c">
+                        <span class="next">►</span>
+                        <span class="prev">◄</span>
+                        <div class="bd">
+                            <ul>
+                                <? //遍历首页合作媒体
+                                    var partner = partners.values.icon!;
+                                    var icons = [];
+                                    if(isNotEmpty(partner)){
+                                        icons = strutil.split (partner,",");
+                                    }
+                                    for(var icon in icons!){?>
+                                    <li><img src="${icon}" /></li>
+                                <?}?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            #kcbi {
+                width: 150px;
+                position: fixed;
+                bottom: 0;
+                right: 50%;
+                margin-right: -722px;
+                background: #ccc;
+                z-index: 50;
+                padding: 10px;
+            }
+
+            #kcbi img {
+                display: block;
+                width: 150px;
+            }
+
+            #kcbi p {
+                text-align: center;
+                line-height: 30px;
+                font-size: 16px;
+            }
+        </style>
+        <div id="kcbi" style="bottom:120px;"><img src="includes/lib-source/iffx/images/qcode.jpg" />
+            <p>扫一扫</br>体验更多专业服务</p>
+        </div>
+    </div>
+</div>
+<?}?>

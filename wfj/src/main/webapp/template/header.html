@@ -1,0 +1,83 @@
+<!--头部------------------>
+<div id="head">
+    <div class="head">
+        <h1><a href="javascript:void(0)"><img src="${basePath}includes/lib-source/iffx/images/logo.jpg" /></a></h1>
+        <div class="head_r">
+            <img src="${basePath}includes/lib-source/iffx/images/hrimg.png" />
+        </div>
+    </div>
+</div>
+<!--导航------------------>
+<div id="nav">
+    <ul class="nava">
+        <li>
+            <a class="nav_a" href="${basePath}index">首页</a>
+        </li>
+        <li>
+            <a class="nav_a" href="${basePath}Display/dytz">多元投资</a>
+            <div class="s_nav">
+                <!--<a target="_blank" href="${basePath}zt/ljdbsp">爱福外汇</a>-->
+                <!--<a target="_blank" href="${basePath}Display/Jlgj">爱福外汇</a>-->
+                <a target="_blank" href="http://www.iffx.com/">爱福外汇</a>
+                <?
+                  for(var inv in inlist){?>
+                    <a target="_blank" href="${basePath}Display/dytz?code=${inv.groupCode}">${inv.groupName}</a>
+                  <?}
+                ?>
+            </div>
+        </li>
+        <li>
+            <a class="nav_a" target="_blank" href="${basePath}Display/Activity">热点活动</a>
+            <div class="s_nav">
+               <!-- <a target="_blank" href="/zt/cjzfblx">超级周风暴来袭</a>-->
+               <!-- <a target="_blank" href="${basePath}zt/mlcyx">美联储议息</a>-->
+                <? for(var act in actlist){?>
+                    <a target="_blank" href="${basePath}Display/Activity?code=${act.groupCode}">${act.groupName}</a>
+                <?}?>
+            </div>
+        </li>
+        <li>
+            <a class="nav_a" target="_blank" href="http://iffx.tv">行情直播室</a>
+          <!--  <div class="s_nav">
+                <a target="_blank" href="http://zb.songyutech.com">文字直播</a>
+                <a target="_blank" href="http://course.tpfs.com.cn/">高德直播</a>
+                <a target="_blank" href="http://live.tpfs.com.cn/login.shtml?http://live.tpfs.com.cn/7000">名师特训</a>
+            </div>-->
+        </li>
+        <li>
+            <a class="nav_a" href="${basePath}DhService/Team">爱福服务</a>
+            <div class="s_nav">
+                <a href="${basePath}DhService/Team">爱福专家</a>
+                <a href="${basePath}DhService/AnalystList">独家策略</a>
+                <a href="${basePath}DhService/Report1">爱福内参</a>
+            </div>
+        </li>
+        <li>
+            <a class="nav_a" href="${basePath}JiePan/Exclusive">爱福解盘</a>
+            <div class="s_nav">
+                <a href="${basePath}JiePan/Cjrl">财经日历</a>
+                <a href="${basePath}JiePan/Exclusive">独家观点</a>
+                <a href="${basePath}JiePan/PrivateNews">私募动态</a>
+            </div>
+        </li>
+        <li>
+            <a class="nav_a" href="${basePath}Display/download">软件下载</a>
+            <div class="s_nav">
+                <a href="${basePath}Display/download">软件下载</a>
+            </div>
+        </li>
+        <li>
+            <a class="nav_a" href="http://manage.iffx.cn/apply/real.html">立即开户</a>
+          <!--  <div class="s_nav">
+                <a href="http://120.132.32.150:10002/SelfOpenAccount/firmController.fir?funcflg=goFirst&memNo=043">东北商品开户</a>
+                <a href="/Display/wskh">大连再生开户</a>
+            </div>-->
+        </li>
+        <li>
+            <a class="nav_a" href="${basePath}Display/about">关于我们</a>
+            <div class="s_nav">
+                <a href="${basePath}Display/about">集团风采</a>
+            </div>
+        </li>
+    </ul>
+</div>
